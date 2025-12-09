@@ -1,0 +1,126 @@
+body {
+    background: #d066d7;
+    font-family: 'Lucida Console', monospace;
+    color: black;
+    padding: 20px;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.8) blur(1px);
+}
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: rgba(255,255,255,0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-family: 'Lucida Console', monospace;
+  font-size: 12px;
+  color: black;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+body {
+    background: #d066d7;
+    font-family: 'Lucida Console', monospace;
+    color: black;
+    padding: 20px;
+}
+
+
+.music-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 420px;
+    border: 3px solid #000;
+    background: #e3e3e3;
+    box-shadow: 2px 2px 0 #000;
+}
+
+
+.music-header {
+    background: #0b42aa;     
+    color: white;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+}
+
+
+.music-content {
+    padding: 20px;
+}
+
+
+.music-track {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.music-track img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.music-track span {
+    font-size: 13px;
+}
+
+
+.music-track:hover {
+    transform: scale(1.04);
+}
+
+.glitch-track {
+    position: relative;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.glitch-track::after {
+    content: attr(data-glitch);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 12px;
+    color: #ff0000;
+    opacity: 0;
+    text-shadow: -2px 0 magenta, 2px 0 cyan;
+    transform: translateY(-2px) skewX(5deg);
+    transition: 0.2s ease-in-out;
+}
+
+
+.glitch-track:hover::after {
+    opacity: 1;
+}
+
+
+.glitch-track:hover {
+    text-shadow: -3px 0 magenta, 3px 0 cyan;
+    transform: skewX(4deg);
+}

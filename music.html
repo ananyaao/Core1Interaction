@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="music.css">
+</head>
+
+<body>
+
+<video autoplay muted loop playsinline id="bg-video">
+    <source src="music_backgroundvideo.mp4" type="video/mp4">
+</video>
+
+<div class="top-bar">
+    <span class="date">Oct 7, 2025</span>
+    <span class="profile">User Name</span>
+</div>
+
+<div class="music-box">
+
+    <div class="music-header">
+        Music Player
+    </div>
+
+    <div class="music-content">
+
+ <div class="music-track">
+    <img src="music.png" alt="icon">
+    <span class="track-title">symphonia_ix.mp3</span>
+    <audio src="Symphonia_IX.mp3"></audio>
+</div>
+
+<div class="music-track">
+    <img src="music.png" alt="icon">
+    <span class="track-title glitch-track" data-glitch="searchthis">remember_you.mp3</span>
+    <audio src="Remember_you.mp3"></audio>
+</div>
+
+<div class="music-track">
+    <img src="music.png" alt="icon">
+    <span class="track-title">all_i_need.mp3</span>
+    <audio src="All_i_need.mp3"></audio>
+</div>
+
+<script>
+document.querySelectorAll('.music-track').forEach(track => {
+    const audio = track.querySelector("audio");
+
+    track.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.currentTime = 0; 
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    });
+});
+</script>
+
+</body>
+</html>

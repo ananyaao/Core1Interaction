@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet</title>
+    <link rel="stylesheet" href="internet.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <span class="date">Oct 7, 2025</span>
+    <span class="profile">User Name</span>
+</div>
+
+  <img src="googlelogo.png" class="logo" alt="logo">
+
+  <input id="query" class="search-box" type="text" placeholder="Search the web...">
+  <br>
+  <button class="button" onclick="checkQuery()">Search</button>
+
+<script>
+function checkQuery() {
+    const query = document.getElementById('query').value.trim().toLowerCase();
+    const secretCode = "remember_you"; 
+
+    if (query === secretCode) {
+        window.location.href = "reveal.html"; first
+    } else {
+        alert("No results found for: " + query);
+    }
+}
+
+document.getElementById('query').addEventListener('keydown', function(e) {
+    if (e.key === "Enter") {
+        checkQuery();
+    }
+});
+</script>
+
+</body>
+</html>
