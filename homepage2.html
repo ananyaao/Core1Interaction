@@ -17,10 +17,10 @@
     <source src="bg-video2.mp4" type="video/mp4">
   </video>
 
-  <div class="top-bar">
-    <span class="date">15 September 1996</span>
-    <span class="profile">xX_nanyabusiness_xx</span>
-  </div>
+<div class="top-bar">
+  <span class="date"><span id="current-date"></span></span>
+  <span class="profile">xX_nanyabusiness_xx</span>
+</div>
 
  <div class="system-log">
   <div class="log-header">SYSTEM LOG</div>
@@ -158,5 +158,12 @@ window.addEventListener('click', () => {
 }, { once: true });
 
 </script>
+  
+<script>
+  const dateSpan = document.getElementById('current-date');
+  const today = new Date();
+  dateSpan.textContent = today.toLocaleDateString(); // e.g., "12/9/2025"
+</script>
+
 </body>
 </html>
