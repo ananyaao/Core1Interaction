@@ -99,6 +99,7 @@ a {
   height: 100%;
   background: white;
   z-index: 150;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -118,6 +119,5 @@ a {
   right: 10px;
   cursor: pointer;
 }
-
 
 
