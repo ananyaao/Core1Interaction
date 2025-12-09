@@ -1,3 +1,15 @@
+body {
+  margin: 0;
+  font-family: 'Lucida Console', monospace;
+  background: no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  background-image: url("photosbackground.jpg"); 
+  background-size: cover;
+  background-position: center; 
+}
+
 .top-bar {
   position: fixed;
   top: 0;
@@ -10,73 +22,55 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  font-family: 'Lucida Console', monospace;
   font-size: 12px;
   color: black;
   z-index: 100;
-  box-sizing: border-box; 
-  overflow: hidden;
 }
-
-body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #e3f2ff, #fef6ff);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: "Press Start 2P", monospace;
-  color: black;
-}
-
 
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  margin: 100px auto; 
+  gap: 20px;
+  margin: 80px auto;
+  width: max-content;
 }
 
+
 .photo-item {
-  width: 180px;
-  height: 180px;
-  background: #ffffffcc; 
-  border: 1px solid #c0c0c0;
-  padding: 6px;
-  text-align: center;
-  box-sizing: border-box;
+  width: 220px;
+  height: 220px;
+  position: relative;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  backdrop-filter: blur(4px);
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.photo-item:hover {
+  transform: scale(1.1);
 }
 
 .photo-thumb {
   width: 100%;
-  aspect-ratio: 1 / 1; 
-  overflow: hidden; 
-  border: 1px solid #aaa;
-  background-color: #dcdcdc;
-  margin-bottom: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
+  height: 100%;
+  border: 1px solid #000000;
+  overflow: hidden;
 }
 
 .photo-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-
-.photo-item p {
-  margin: 6px 0 0;
-  font-size: 11px;
-  color: #333;
+.photo-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  background: rgba(27, 0, 203, 0.7);
+  padding: 2px 0;
+  box-sizing: border-box;
 }
