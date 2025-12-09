@@ -87,7 +87,7 @@ a {
   left: 10px;
   cursor: pointer;
   font-size: 18px;
-  z-index: 200;
+  z-index: 1000;
 }
 
 .prologue-overlay {
