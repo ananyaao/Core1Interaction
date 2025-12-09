@@ -56,3 +56,17 @@
   </div>
 </body>
 </html>
+
+<script>
+const icon = document.getElementById('prologue-icon');
+const overlay = document.getElementById('prologue-overlay');
+const closeBtn = document.getElementById('close-prologue');
+
+icon.addEventListener('click', () => {
+  overlay.style.display = 'flex';
+});
+
+closeBtn.addEventListener('click', () => {
+  overlay.style.display = 'none';
+});
+</script>
