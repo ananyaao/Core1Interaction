@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transition</title>
+  <style>
+    
+    body {
+      margin: 0;
+      height: 100vh;
+      background: black;
+      font-family: 'Lucida Console', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #white-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      transition: background-color 2s ease;
+      z-index: 100;
+    }
+
+    #restart-container {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      text-align: center;
+      display: none;
+      z-index: 101;
+    }
+
+    #restart-container img {
+      width: 75px;
+      height: 75px;
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 1s ease;
+      opacity: 0;
+    }
+
+    #restart-container img:hover {
+      transform: scale(1.1);
+    }
+
+    #restart-container span {
+      display: block;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="white-screen"></div>
+
+<div id="restart-container">
+  <a href="homepage2.html">
+    <img src="restart.png" alt="Restart">
+    <span>Restart</span>
+  </a>
+</div>
+
+<script>
+  function revealRestart() {
+    const whiteScreen = document.getElementById('white-screen');
+    const restart = document.getElementById('restart-container');
+    const restartImg = restart.querySelector('img');
+
+    whiteScreen.style.backgroundColor = 'black';
+
+    setTimeout(() => {
+      whiteScreen.style.backgroundColor = 'white';
+    }, 50);
+
+    setTimeout(() => {
+      restart.style.display = 'block';
+      restartImg.style.opacity = 1;
+    }, 2050);
+  }
+
+  revealRestart();
+</script>
+
+</body>
+</html>
